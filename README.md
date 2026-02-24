@@ -42,10 +42,14 @@ Weights are **lagged by exactly one trading day** before being applied to return
 
 ## Assets
 
-| Role | Ticker | Description |
-|------|--------|-------------|
+Any pair of tickers supported by `yfinance` can be used — just update `RISKY_ASSET` and `SAFE_ASSET` in the config block. The defaults are:
+
+| Role | Default Ticker | Description |
+|------|---------------|-------------|
 | Risky Asset | QQQ | Nasdaq-100 ETF (growth/tech equity) |
 | Safe Asset | IEF | 7–10 Year Treasury Bond ETF |
+
+Examples of other valid combinations: SPY/TLT, BTC-USD/SHY, GLD/SHV.
 
 ---
 
