@@ -46,10 +46,10 @@ Any pair of tickers supported by `yfinance` can be used — just update `RISKY_A
 
 | Role | Default Ticker | Description |
 |------|---------------|-------------|
-| Risky Asset | QQQ | Nasdaq-100 ETF (growth/tech equity) |
+| Risky Asset | SPY | S&P 500 ETF (broad U.S. equity) |
 | Safe Asset | IEF | 7–10 Year Treasury Bond ETF |
 
-Examples of other valid combinations: SPY/TLT, BTC-USD/SHY, GLD/SHV.
+Examples of other valid combinations: QQQ/TLT, BTC-USD/SHY, GLD/SHV.
 
 ---
 
@@ -87,7 +87,7 @@ TARGET_VOLATILITY = 0.10        # Annualized vol target
 LAMBDA_DECAY = 0.94             # EWMA smoothing factor
 YEARS_OF_DATA = 5               # Backtest window
 BENCHMARK_RISKY_WEIGHT = 0.60   # 60/40 benchmark equity weight
-RISKY_ASSET = 'QQQ'
+RISKY_ASSET = 'SPY'
 SAFE_ASSET = 'IEF'
 ```
 
