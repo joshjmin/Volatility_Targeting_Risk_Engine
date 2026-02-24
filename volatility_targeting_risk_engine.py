@@ -24,7 +24,7 @@ from datetime import datetime, timedelta
 # ============================================================================
 
 # Assets
-RISKY_ASSET = 'QQQ'
+RISKY_ASSET = 'SPY'
 SAFE_ASSET = 'IEF'
 
 # Risk Parameters
