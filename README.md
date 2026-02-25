@@ -109,7 +109,7 @@ Output:
 
 ---
 
-## Optional: AI Volatility Spike Explanation
+## AI Volatility Spike Explanation
 
 If `OPENAI_API_KEY` is set in the environment and a recent volatility spike is detected (current vol > 130% of trailing average), the engine calls GPT-4o-mini to generate a concise macro explanation of the regime shift. This is purely informational and produces no trading signals.
 
