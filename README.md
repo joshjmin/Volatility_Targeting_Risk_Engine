@@ -46,10 +46,10 @@ Any pair of tickers supported by `yfinance` can be used — just update `RISKY_A
 
 | Role | Default Ticker | Description |
 |------|---------------|-------------|
-| Risky Asset | QQQ | Nasdaq-100 ETF (growth/tech equity) |
+| Risky Asset | SPY | S&P 500 ETF (broad U.S. equity) |
 | Safe Asset | IEF | 7–10 Year Treasury Bond ETF |
 
-Examples of other valid combinations: SPY/TLT, BTC-USD/SHY, GLD/SHV.
+Examples of other valid combinations: QQQ/TLT, BTC-USD/SHY, GLD/SHV.
 
 ---
 
@@ -87,7 +87,7 @@ TARGET_VOLATILITY = 0.10        # Annualized vol target
 LAMBDA_DECAY = 0.94             # EWMA smoothing factor
 YEARS_OF_DATA = 5               # Backtest window
 BENCHMARK_RISKY_WEIGHT = 0.60   # 60/40 benchmark equity weight
-RISKY_ASSET = 'QQQ'
+RISKY_ASSET = 'SPY'
 SAFE_ASSET = 'IEF'
 ```
 
@@ -109,7 +109,7 @@ Output:
 
 ---
 
-## Optional: AI Volatility Spike Explanation
+## AI Volatility Spike Explanation
 
 If `OPENAI_API_KEY` is set in the environment and a recent volatility spike is detected (current vol > 130% of trailing average), the engine calls GPT-4o-mini to generate a concise macro explanation of the regime shift. This is purely informational and produces no trading signals.
 
@@ -126,13 +126,3 @@ python volatility_targeting_backtest.py
 - **No leverage** — equity weight is hard-capped at 100%
 - **No transaction costs** modeled — a realistic extension for live deployment
 - **EWMA over rolling window** — avoids the "ghost effect" of equal-weighted rolling vol dropping off a volatile day abruptly
-
----
-
-## Potential Extensions
-
-- Add transaction cost modeling with turnover constraints
-- Incorporate a second volatility asset (e.g., VIX futures) for regime overlay
-- Extend to multi-asset portfolios with covariance-based targeting
-- Add walk-forward optimization for λ and target volatility parameters
-- Connect to a broker API (Alpaca, IBKR) for live execution
